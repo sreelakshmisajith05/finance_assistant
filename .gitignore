@@ -6,3 +6,4 @@ __pycache__/
 .gradio
 .gradio/
 *.pyc
+*.json
