@@ -1,2 +1,2 @@
 # finance_assistant
-An AI-powered Financial Assistant built with Python, Streamlit, Google Gemini, and yFinance. It features a chatbot interface that answers natural finance queries, fetches real-time stock data, performs analysis and comparisons, and provides investment recommendations through an interactive dashboard.
+Finance Assistant is an AI-powered financial analysis application built using Python, Streamlit, Google Gemini, and yFinance. It features an intelligent chatbot that understands natural language finance queries, fetches real-time stock data, performs detailed analysis and comparisons, and delivers investment insights through an interactive dashboard.
