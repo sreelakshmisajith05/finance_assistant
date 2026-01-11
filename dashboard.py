@@ -13,24 +13,12 @@ import numpy as np
 import warnings
 warnings.filterwarnings('ignore')
 
-# Configure using GCP Service Account
-service_account_path = "financeassistant-464112-4a2eb452ce88.json"
-project_id = "financeassistant-464112"
+api_key = os.environ.get("GOOGLE_API_KEY")
 
-# Load credentials from service account file
-if os.path.exists(service_account_path):
-    credentials = service_account.Credentials.from_service_account_file(service_account_path)
-    genai.configure(credentials=credentials)
+if not api_key:
+    st.error("GOOGLE_API_KEY not found. Please set it in environment variables.")
 else:
-    # If file not found, try using Streamlit secrets
-    try:
-        service_account_info = st.secrets["gcp_service_account"]
-        credentials = service_account.Credentials.from_service_account_info(
-            json.loads(service_account_info)
-        )
-        genai.configure(credentials=credentials)
-    except:
-        st.error("Service account file not found. Please ensure 'financeassistant-464112-4a2eb452ce88.json' is in your project directory.")
+    genai.configure(api_key=api_key)
 
 # Page configuration
 st.set_page_config(
